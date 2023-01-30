@@ -9,7 +9,7 @@ from googletrans import Translator
 
 global_input = ""
 global_output = ""
-global_languages = ["ar", "la", "ja", "zh-cn", "la", "de"]
+global_languages = ["ar", "la", "ja", "zh-cn", "de"]
 global_lang_out = "de"
 global_timeout = 1
 
@@ -23,7 +23,7 @@ def print_help():
     print("--output    <file> : Output language file")
     print("optional options:")
     print("--lang-list <list> : List of languages to use")
-    print("                     Default: \"ar, la, ja, zh-cn, la, de\"")
+    print("                     Default: \"ar, la, ja, zh-cn, de\"")
     print("--lang-out  <lang> : Final output language")
     print("--timeout  <delay> : Seconds between translations")
     sys.exit(0)
@@ -107,9 +107,10 @@ def main():
 
             for i, line in enumerate(file_in):
                 if line.startswith("{"):
-                    pass
+                    file_out.write("{\n")
                 elif line.startswith("}"):
-                    pass
+                    file_out.write("\"\": \"\"\n")
+                    file_out.write("}")
                 else:
                     in_split = line.split("\": \"")
                     key = in_split[0].replace("\"", "")
