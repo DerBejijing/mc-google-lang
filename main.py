@@ -9,9 +9,10 @@ from googletrans import Translator
 
 global_input = ""
 global_output = ""
-global_languages = ["ar", "la", "ja", "zh-cn", "de"]
+#global_languages = ["ar", "la", "ja", "zh-cn", "de"]
+global_languages = ["zh-cn", "eo", "ar"]
 global_lang_out = "de"
-global_timeout = 1
+global_timeout = 2
 
 global_translator = Translator()
 
