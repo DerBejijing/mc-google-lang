@@ -25,11 +25,12 @@ def print_help():
     print("--lang-list <list> : List of languages to use")
     print("                     Default: \"ar, la, ja, zh-cn, la, de\"")
     print("--lang-out  <lang> : Final output language")
+    print("--timeout  <delay> : Seconds between translations")
     sys.exit(0)
 
 
 def parse_arguments():
-    global global_input, global_output, global_languages, global_lang_out
+    global global_input, global_output, global_languages, global_lang_out, global_timeout
 
     entry_last = ""
     for i, entry in enumerate(sys.argv):
@@ -44,6 +45,8 @@ def parse_arguments():
                 global_languages.append(lang)
         if entry_last == "--lang-out":
             global_lang_out = entry
+        if entry_last == "--timeout":
+            global_timeout = int(entry)
         entry_last = entry
     
     if global_input.replace(" ","") == "": print_help()
