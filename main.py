@@ -3,13 +3,15 @@
 import re
 import os
 import sys
+import time
 
 from googletrans import Translator
 
 global_input = ""
 global_output = ""
-global_languages = ["ar", "la", "ja", "de"]
+global_languages = ["ar", "la", "ja", "zh-cn", "de"]
 global_lang_out = "de"
+global_timeout = 1
 
 global_translator = Translator()
 
@@ -21,7 +23,7 @@ def print_help():
     print("--output    <file> : Output language file")
     print("optional options:")
     print("--lang-list <list> : List of languages to use")
-    print("                     Default: \"ar, la, ja, de\"")
+    print("                     Default: \"ar, la, ja, zh-cn, de\"")
     print("--lang-out  <lang> : Final output language")
     sys.exit(0)
 
@@ -54,13 +56,14 @@ def parse_arguments():
         sys.exit(0)
 
 
-def do_translate(text: str, languages: list, target_language: str, translator_instance: Translator) -> str:
+def do_translate(text: str, languages: list, target_language: str, timeout: int, translator_instance: Translator) -> str:
     while languages[len(languages) - 1] == target_language:
         languages.remove(target_language)
     languages.append(target_language)
 
     for lang in global_languages:
         text = translator_instance.translate(text, dest=lang).text
+        time.sleep(timeout)
     return text
 
 
@@ -92,7 +95,7 @@ def repair_string(text: str) -> str:
 
 
 def main():
-    global global_input, global_output, global_languages, global_lang_out, global_translator
+    global global_input, global_output, global_languages, global_lang_out, global_timeout, global_translator
 
     parse_arguments()
 
@@ -118,7 +121,7 @@ def main():
 
                     value_old = value
 
-                    value = do_translate(value, global_languages, global_lang_out, global_translator)
+                    value = do_translate(value, global_languages, global_lang_out, global_timeout, global_translator)
                     value = repair_string(value)
 
                     print("[{}] old: {}".format(str(i).center(10), value_old))
