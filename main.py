@@ -95,11 +95,11 @@ def main():
     global global_input, global_output, global_languages, global_lang_out, global_translator
 
     parse_arguments()
-    
+
     with open(global_input, "r") as file_in:
         with open(global_output, "w") as file_out:
 
-            for line in file_in:
+            for i, line in enumerate(file_in):
                 if line.startswith("{"):
                     pass
                 elif line.startswith("}"):
@@ -113,10 +113,16 @@ def main():
                     value = value.replace("\\n", " [AAAAA] ")
                     value = value.replace("%s", " [BBBBB] ")
                     value = value.replace("\n", "")
+                    value = value.replace(",", "")
                     # ignore unicodes for now
+
+                    value_old = value
 
                     value = do_translate(value, global_languages, global_lang_out, global_translator)
                     value = repair_string(value)
+
+                    print("[{}] old: {}".format(str(i).center(10), value_old))
+                    print("[{}] new: {}".format(len(str(i).center(10)) * " ", value))
 
                     file_out.write("\"{}\": \"{}\",\n".format(key, value))
 
