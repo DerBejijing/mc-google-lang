@@ -9,7 +9,6 @@ from googletrans import Translator
 
 global_input = ""
 global_output = ""
-#global_languages = ["ar", "la", "ja", "zh-cn", "de"]
 global_languages = ["zh-cn", "eo", "ar"]
 global_lang_out = "de"
 global_timeout = 2
@@ -54,7 +53,7 @@ def parse_arguments():
     if global_output.replace(" ","") == "": print_help()
     if global_lang_out.replace(" ","") == "": print_help()
     if not global_languages: print_help()
-
+    
     if not os.path.exists(global_input):
         print("Input file {} does not exist!".format(global_input))
         sys.exit(0)
@@ -122,7 +121,6 @@ def main():
                     value = value.replace("%s", " [BBBBB] ")
                     value = value.replace("\n", "")
                     value = value.replace(",", "")
-                    # ignore unicodes for now
 
                     value_old = value
 
