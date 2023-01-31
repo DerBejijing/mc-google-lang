@@ -65,8 +65,14 @@ def do_translate(text: str, languages: list, target_language: str, timeout: int,
     languages.append(target_language)
 
     for lang in global_languages:
-        text = translator_instance.translate(text, dest=lang).text
-        time.sleep(timeout)
+        attempts = 0
+        while attempts < 3:
+            try:
+                text = translator_instance.translate(text, dest=lang).text
+                attempts = 3
+                time.sleep(timeout)
+            except Exception:
+                attempts += 1
     return text
 
 
