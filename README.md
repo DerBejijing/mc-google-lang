@@ -17,7 +17,7 @@ required options:
 --output    <file> : Output language file  
 
 optional options:  
---lang-list <list> : List of languages to use (default: "ar, la, ja, zh-cn, de")  
+--lang-list <list> : List of languages to use (default: "fr, ch-zn, la, ru")  
 --lang-out  <lang> : Final output language  
 --timeout  <delay> : Seconds between translations  
 ```
