@@ -9,7 +9,7 @@ from googletrans import Translator
 
 global_input = ""
 global_output = ""
-global_languages = ["zh-cn", "eo", "ar"]
+global_languages = ["fr", "ch-zn", "la", "ru"]
 global_lang_out = "de"
 global_timeout = 2
 
@@ -23,7 +23,7 @@ def print_help():
     print("--output    <file> : Output language file")
     print("optional options:")
     print("--lang-list <list> : List of languages to use")
-    print("                     Default: \"ar, la, ja, zh-cn, de\"")
+    print("                     Default: \"fr, ch-zn, la, ru\"")
     print("--lang-out  <lang> : Final output language")
     print("--timeout  <delay> : Seconds between translations")
     sys.exit(0)
