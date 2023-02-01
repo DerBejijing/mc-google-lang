@@ -6,11 +6,14 @@ TODO:
 - [ ] Google messes with my way of preventing "%s" from being translated...
 - [ ] Parse entire file afterwards and fix obvious issues  
 
+
+
 Some of my personal favorites for the german translation:  
 | Original | Translated | Translated to english |
 | --- | --- | --- |
 | Elder Guardian Spawn Egg | Seniorenei | Senioregg |
 | Donkey Spawn Egg | Der Eierel | ? |
+| Wolf Spawn Egg | Die Lumpus - Frau erzeugt Eier | The Lumpus - Woman produces eggs |
 | Frostwalker | Der Gefrierschrank | The refrigerator |
 | Swift Sneak | Kirschenarrangement | Cherryarrangement |
 | Leaping | Wahnsinn | Insanity |
