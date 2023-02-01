@@ -10,7 +10,7 @@ TODO:
 
 Some of my personal favorites for the german translation:  
 | Original | Translated | Translated to english |
-| --- | --- | --- |
+| --- | :-: | --: |
 | Elder Guardian Spawn Egg | Seniorenei | Senioregg |
 | Donkey Spawn Egg | Der Eierel | ? |
 | Wolf Spawn Egg | Die Lumpus - Frau erzeugt Eier | The Lumpus - Woman produces eggs |
