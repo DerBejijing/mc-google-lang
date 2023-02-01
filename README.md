@@ -5,6 +5,7 @@ Google translated minecraft
 
 I already did the exact same thing many years ago but I thought it would be fun to refactor everything and do it again.  
 This script reads in a normal minecraft language file and translates all entries using the amazing power of google translate.  
+This Repo contains a minecraft resource pack with a language file. It is German.  
 A path of different languages can be supplied using arguments.  
 
 ## Usage  
@@ -28,8 +29,10 @@ TODO:
 - [ ] Google messes with my way of preventing "%s" from being translated...
 - [ ] Parse entire file afterwards and fix obvious issues  
 
+## Demo  
 
-
+The language file supplied in the resourrce pack folder was generated using this path: "fr ch-zn la ru fr".  
+Choosing french as the first language turned out to be funny as the english word "chat" means "cat" in french so that caused some weirdness...  
 Some of my personal favorites for the german translation:  
 | Original | Translated | Translated to english |
 | --- | :-: | --: |
