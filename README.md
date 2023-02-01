@@ -1,5 +1,27 @@
 # mc-google-lang
-Google translated minecraft
+Google translated minecraft  
+
+## About  
+
+I already did the exact same thing many years ago but I thought it would be fun to refactor everything and do it again.  
+This script reads in a normal minecraft language file and translates all entries using the amazing power of google translate.  
+A path of different languages can be supplied using arguments.  
+
+## Usage  
+
+```
+usage: ./main.py [OPTIONS]  
+required options:  
+--input     <file> : Input language file to translate  
+--output    <file> : Output language file  
+
+optional options:  
+--lang-list <list> : List of languages to use (default: "ar, la, ja, zh-cn, de")  
+--lang-out  <lang> : Final output language  
+--timeout  <delay> : Seconds between translations  
+```
+
+## Future  
 
 TODO:  
 - [ ] Some garbage is still not cleaned up after translation
