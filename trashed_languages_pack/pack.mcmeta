@@ -1,0 +1,13 @@
+{
+    "pack": {
+        "pack_format": 9,
+        "description": "trashed minecraft languages"
+    },
+    "language": {
+        "de_GO": {
+            "name": "Deutsch Google",
+            "region": "Deutschland",
+            "bidirectional": false
+        }
+    }
+}
